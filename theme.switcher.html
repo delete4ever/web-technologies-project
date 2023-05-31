@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Theme Switcher</title>
+  <style>
+    .navbar {
+      background-color: #f2f2f2;
+      padding: 10px;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .navbar-button {
+      margin-right: 10px;
+      padding: 5px 10px;
+      background-color: #e6e6e6;
+      border: none;
+      cursor: pointer;
+    }
+
+    .navbar-button:hover {
+      background-color: #d9d9d9;
+    }
+
+    .theme1 {
+      background-color: #fff;
+      color: #000;
+    }
+
+    .theme2 {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .theme3 {
+      background-color: #ff0000;
+      color: #fff;
+    }
+
+    .theme4 {
+      background-color: #00ff00;
+      color: #000;
+    }
+
+    .theme5 {
+      background-color: #0000ff;
+      color: #fff;
+    }
+
+    .theme6 {
+      background-color: #ffff00;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <button class="navbar-button themeButton" data-theme="1">Theme 1</button>
+    <button class="navbar-button themeButton" data-theme="2">Theme 2</button>
+    <button class="navbar-button themeButton" data-theme="3">Theme 3</button>
+    <button class="navbar-button themeButton" data-theme="4">Theme 4</button>
+    <button class="navbar-button themeButton" data-theme="5">Theme 5</button>
+    <button class="navbar-button themeButton" data-theme="6">Theme 6</button>
+  </div>
+
+  <div id="content">
+    <p>This is the default content.</p>
+  </div>
+
+  <script>
+    var themeButtons = document.getElementsByClassName("themeButton");
+    var content = document.getElementById("content");
+
+    for (var i = 0; i < themeButtons.length; i++) {
+      themeButtons[i].addEventListener("click", function() {
+        var theme = this.getAttribute("data-theme");
+
+        for (var j = 1; j <= 6; j++) {
+          content.classList.remove("theme" + j);
+        }
+
+        content.classList.add("theme" + theme);
+      });
+    }
+  </script>
+</body>
+</html>
+
+
+  
