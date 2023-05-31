@@ -1,45 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Theme Switcher</title>
+  <title>Just A Try</title>
   <style>
     .navbar {
-      background-color: #f2f2f2;
+      background-color: #333;
+      color: #fff;
       padding: 10px;
+    }
+
+    .navbar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
       display: flex;
-      justify-content: flex-start;
+      justify-content: space-between;
     }
 
-    .navbar-button {
+    .navbar li {
       margin-right: 10px;
-      padding: 5px 10px;
-      background-color: #e6e6e6;
-      border: none;
-      cursor: pointer;
     }
 
-    .navbar-button:hover {
-      background-color: #d9d9d9;
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .navbar a:hover {
+      background-color: #fff;
+      color: #333;
     }
 
     .theme1 {
-      background-color: #fff;
-      color: #000;
+      background-color: #f0f0f0;
+      color: #333;
     }
 
     .theme2 {
-      background-color: #000;
-      color: #fff;
+      background-color: #a683d3;
+      color: #333;
     }
 
     .theme3 {
-      background-color: #ff0000;
+      background-color: #ddbb99;
+    }
+
+    .theme3 .navbar-button {
+      background-color: #ccaa77;
       color: #fff;
     }
 
+    .theme3 .navbar-button:hover {
+      background-color: #bb9977;
+    }
+
+    .theme3 #content {
+      background-color: #ddbb99;
+      color: #442200;
+      font-family: 'Times New Roman', serif;
+      font-size: 18px;
+      padding: 20px;
+    }
+
     .theme4 {
-      background-color: #00ff00;
-      color: #000;
+      background-color: #d8c3a5;
+    }
+
+    .theme4 .navbar-button {
+      background-color: #bfa88a;
+      color: #fff;
+    }
+
+    .theme4 .navbar-button:hover {
+      background-color: #a99176;
+    }
+
+    .theme4 #content {
+      background-color: #d8c3a5;
+      color: #4c3829;
+      font-family: 'Arial', sans-serif;
+      font-size: 20px;
+      padding: 20px;
     }
 
     .theme5 {
@@ -51,40 +94,65 @@
       background-color: #ffff00;
       color: #000;
     }
+  
+    .column {
+      column-count: 3;
+      column-gap: 30px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .current-theme {
+      font-weight: bold;
+    }
+    .article {
+    flex-basis: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    }
   </style>
+  <script>
+    function changeTheme(theme) {
+      var body = document.body;
+      body.className = theme;
+      var navbarLinks = document.querySelectorAll('.navbar a');
+      for (var i = 0; i < navbarLinks.length; i++) {
+        navbarLinks[i].classList.remove('current-theme');
+      }
+      document.getElementById(theme).classList.add('current-theme');
+    }
+  </script>
 </head>
 <body>
   <div class="navbar">
-    <button class="navbar-button themeButton" data-theme="1">Theme 1</button>
-    <button class="navbar-button themeButton" data-theme="2">Theme 2</button>
-    <button class="navbar-button themeButton" data-theme="3">Theme 3</button>
-    <button class="navbar-button themeButton" data-theme="4">Theme 4</button>
-    <button class="navbar-button themeButton" data-theme="5">Theme 5</button>
-    <button class="navbar-button themeButton" data-theme="6">Theme 6</button>
+    <ul>
+      <li><a href="#" id="theme1" class="current-theme" onclick="changeTheme('theme1')">Theme 1</a></li>
+      <li><a href="#" id="theme2" onclick="changeTheme('theme2')">Theme 2</a></li>
+      <li><a href="#" id="theme3" onclick="changeTheme('theme3')">Theme 3</a></li>
+      <li><a href="#" id="theme4" onclick="changeTheme('theme4')">Theme 4</a></li>
+      <li><a href="#" id="theme5" onclick="changeTheme('theme5')">Theme 5</a></li>
+      <li><a href="#" id="theme6" onclick="changeTheme('theme6')">Theme 6</a></li>
+    </ul>
   </div>
 
   <div id="content">
-    <p>This is the default content.</p>
+    <div class="column">
+      <div class="article">
+        <h3>Article 1</h3>
+        <p>This is the summary of the first article. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies lacus vitae elementum malesuada. Ut posuere pellentesque magna pellentesque commodo. Duis mattis mi ac odio porta dapibus. Aliquam ac arcu maximus, convallis mi eget, feugiat orci. Cras egestas, tortor sed sollicitudin mattis, ex purus interdum elit, vitae vulputate orci enim sit amet enim. Curabitur odio orci, viverra ac lobortis in, sagittis eleifend orci. Sed quis faucibus libero, ac viverra arcu.</p>
+        <a href="article1.html">Read More</a>
+      </div>
+      
+      <div class="article">
+        <h3>Article 2</h3>
+        <p>Here is a summary of the second article. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies lacus vitae elementum malesuada. Ut posuere pellentesque magna pellentesque commodo. Duis mattis mi ac odio porta dapibus. Aliquam ac arcu maximus, convallis mi eget, feugiat orci. Cras egestas, tortor sed sollicitudin mattis, ex purus interdum elit, vitae vulputate orci enim sit amet enim. Curabitur odio orci, viverra ac lobortis in, sagittis eleifend orci. Sed quis faucibus libero, ac viverra arcu.</p>
+        <a href="article2.html">Read More</a>
+      </div>
+      <div class="article">
+        <h3>Article 3</h3>
+        <p>Here is a summary of the second article. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies lacus vitae elementum malesuada. Ut posuere pellentesque magna pellentesque commodo. Duis mattis mi ac odio porta dapibus. Aliquam ac arcu maximus, convallis mi eget, feugiat orci. Cras egestas, tortor sed sollicitudin mattis, ex purus interdum elit, vitae vulputate orci enim sit amet enim. Curabitur odio orci, viverra ac lobortis in, sagittis eleifend orci. Sed quis faucibus libero, ac viverra arcu.</p>
+        <a href="article3.html">Read More</a>
+      </div>
+    </div>
   </div>
-
-  <script>
-    var themeButtons = document.getElementsByClassName("themeButton");
-    var content = document.getElementById("content");
-
-    for (var i = 0; i < themeButtons.length; i++) {
-      themeButtons[i].addEventListener("click", function() {
-        var theme = this.getAttribute("data-theme");
-
-        for (var j = 1; j <= 6; j++) {
-          content.classList.remove("theme" + j);
-        }
-
-        content.classList.add("theme" + theme);
-      });
-    }
-  </script>
 </body>
 </html>
-
-
-  
