@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Just a Try</title>
+  <style>
+    body { 
+      font-family: Georgia, 'Times New Roman', Times, serif, Times, serif, sans-serif;
+      text-align: left;
+      margin: 0 0 270px 0;
+      padding: 5px 0 50px 0;
+      background:  #8b9cb0;
+    }
+    
+    .airlock {
+      width: 966px; 
+      margin: auto;
+      margin-top: 0px;
+      margin-bottom: 30px;
+      height: auto;
+      background: url('http://images.nymoon.com/sheetback.jpg') #ede8d9;
+      overflow:hidden;
+    }
+
+    .container {
+      width: 950px; 
+    }
+
+    .nameplate {
+      width: 966px; 
+      height: 150px;
+      background: url('http://images.nymoon.com/masthead.jpg') no-repeat;
+    }
+
+    .topnav {
+      width: 850px;
+      height: 33px;
+      border-top: 1px solid #b2afa3;
+      border-bottom: 1px solid #b2afa3;
+      list-style: none !important;
+      margin-left: 20px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      padding: 0 35px;
+      text-align: center;
+    }
+
+    .topnav li {
+      margin: 1px;
+      margin-top: -7px;
+      float: left;
+      display: block;
+    }
+
+    .topnav a {
+      border-left: 1px dotted #b2afa3;
+      font-size: 15px;
+      letter-spacing: 2px;
+      padding: 5px 26px;
+      text-decoration: none;
+      color:#000
+    }
+
+    .topnav li:first-child a, #topnavdupe li:first-child a {
+      border: 0 none;
+    }
+
+    .topnav a:hover {
+      color: #fff;
+      background: #000;
+    }
+
+    .sidebar {
+      margin-top: 10px;
+      margin-left: 20px;
+      float: left;
+      width: 20%;
+      padding: 20px;
+      border-right: 1px dotted #b2afa3;
+      text-align: left;
+    }
+
+    .content {
+      margin-top: 10px;
+      float: right;
+      width: 65%;
+      padding: 20px;
+    }
+  </style>
+  
+</head>
+
+<body>
+  <div class="airlock">
+    <div class="container">
+      <div class="nameplate">
+      </div>
+      <div class="topnav">
+        <ul>
+          <li><a href="#" id="theme1" class="current-theme" onclick="changeTheme('theme1')">Theme 1</a></li>
+          <li><a href="#" id="theme2" onclick="changeTheme('theme2')">Theme 2</a></li>
+          <li><a href="#" id="theme3" onclick="changeTheme('theme3')">Theme 3</a></li>
+          <li><a href="#" id="theme4" onclick="changeTheme('theme4')">Theme 4</a></li>
+          <li><a href="#" id="theme5" onclick="changeTheme('theme5')">Theme 5</a></li>
+          <li><a href="#" id="theme6" onclick="changeTheme('theme6')">Theme 6</a></li>
+        </ul>
+      </div>
+      <div class="sidebar">
+        <div class="documents">
+          <h3>Documents</h3>
+            <ul>
+              <li><a href="#" data-article-id="article1">Article 1</a></li>
+              <li><a href="#" data-article-id="article2">Article 2</a></li>
+              <li><a href="#" data-article-id="article3">Article 3</a></li>
+              </ul>
+        </div>    
+      </div>
+      <div class="content">
+        <h2>Home Page</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies lacus vitae elementum malesuada. Ut posuere pellentesque magna pellentesque commodo. Duis mattis mi ac odio porta dapibus. Aliquam ac arcu maximus, convallis mi eget, feugiat orci. Cras egestas, tortor sed sollicitudin mattis, ex purus interdum elit, vitae vulputate orci enim sit amet enim. Curabitur odio orci, viverra ac lobortis in, sagittis eleifend orci. Sed quis faucibus libero, ac viverra arcu.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies lacus vitae elementum malesuada. Ut posuere pellentesque magna pellentesque commodo. Duis mattis mi ac odio porta dapibus. Aliquam ac arcu maximus, convallis mi eget, feugiat orci. Cras egestas, tortor sed sollicitudin mattis, ex purus interdum elit, vitae vulputate orci enim sit amet enim. Curabitur odio orci, viverra ac lobortis in, sagittis eleifend orci. Sed quis faucibus libero, ac viverra arcu.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies lacus vitae elementum malesuada. Ut posuere pellentesque magna pellentesque commodo. Duis mattis mi ac odio porta dapibus. Aliquam ac arcu maximus, convallis mi eget, feugiat orci. Cras egestas, tortor sed sollicitudin mattis, ex purus interdum elit, vitae vulputate orci enim sit amet enim. Curabitur odio orci, viverra ac lobortis in, sagittis eleifend orci. Sed quis faucibus libero, ac viverra arcu.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies lacus vitae elementum malesuada. Ut posuere pellentesque magna pellentesque commodo. Duis mattis mi ac odio porta dapibus. Aliquam ac arcu maximus, convallis mi eget, feugiat orci. Cras egestas, tortor sed sollicitudin mattis, ex purus interdum elit, vitae vulputate orci enim sit amet enim. Curabitur odio orci, viverra ac lobortis in, sagittis eleifend orci. Sed quis faucibus libero, ac viverra arcu.</p>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  function getArticleContent(articleId) {
+    var articles = {
+      article1: '<h2>Article 1</h2><p>Morbi dignissim pharetra ipsum, a porttitor tellus. Aliquam vitae tincidunt tellus, at tempus quam. Nunc eleifend libero nec lectus aliquam, aliquet eleifend augue vestibulum. Curabitur maximus est justo. Aliquam sapien ex, tincidunt dictum lectus id, finibus consectetur neque. Ut et nisi dictum, ullamcorper lorem a, volutpat justo. Nunc dictum condimentum sem. Pellentesque hendrerit nunc vitae mollis maximus. Nullam euismod, libero et interdum laoreet, lorem ex vehicula nulla, at laoreet dui arcu at mauris.</p>',
+      article2: '<h2>Article 2</h2><p>Duis sed metus eget lectus aliquet suscipit. Fusce sed mi vitae sapien porttitor blandit eget non quam. Curabitur quis dui leo. Nullam vulputate ligula non elit pharetra, ac efficitur ipsum cursus. Integer et ante in metus interdum scelerisque vel ut orci. Nullam at neque molestie, commodo eros nec, mattis diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam lectus dui, vestibulum nec nibh eu, fringilla sagittis arcu.</p>',
+      article3: '<h2>Article 3</h2><p>Cras dapibus nisi elit, quis ullamcorper metus mollis in. Suspendisse nec diam id sapien porttitor maximus. Pellentesque convallis sapien egestas sem scelerisque, vitae blandit neque pharetra. Sed et augue imperdiet tortor interdum tempor. Suspendisse potenti. Morbi gravida odio turpis, quis mattis purus condimentum maximus. Nunc in rutrum enim. Pellentesque varius, dui nec lobortis ultricies, mauris ipsum molestie magna, non varius elit mi eu diam.</p>'
+    };
+
+    return articles[articleId];
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var links = document.querySelectorAll('.sidebar a');
+    var content = document.querySelector('.content');
+
+    links.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        var articleId = link.getAttribute('data-article-id');
+        var articleContent = getArticleContent(articleId);
+
+        content.innerHTML = articleContent;
+      });
+    });
+  });
+</script>
+</html>
